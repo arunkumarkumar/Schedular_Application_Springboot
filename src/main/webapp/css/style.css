@@ -1,0 +1,1026 @@
+@import url("../fonts/Roboto-Font/Roboto.css");
+@import url("../fonts/Font-Awesome-6.4/font-awesome.css");
+@import url("../css/bootstrap.min.css");
+@import url("../css/loader.css");
+
+body {
+    font-family: Roboto;
+    overflow: hidden;
+
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+}
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+a, a:hover {
+    text-decoration: none !important;
+}
+
+.align-center {
+    text-align: center;
+}
+.align-right {
+    text-align: right;
+}
+
+/*Header*/
+
+header {
+    /*background-color: #121c21;*/
+    background: linear-gradient(125deg, rgba(18,28,33,1) 0%, rgba(18,28,33,1) 50%, rgba(22,39,48,1) 70%, rgba(18,28,33,1) 70%, rgba(22,39,48,1) 80%, rgba(18,28,33,1) 80%, rgba(18,28,33,1) 100%);
+    margin: 0px;
+    padding: 0px;
+    height: 50px;
+}
+
+.header-container {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    display: flex;
+}
+
+.logo-container {
+    margin: 0px;
+    padding: 10px 0px 10px 15px;
+    height: 100%;
+    width: 230px;
+}
+
+    .logo-container .logo {
+        height: 100%;
+
+    }
+
+.header-right-container {
+    width: calc(100% - 230px);
+    display: table;
+}
+
+    .header-right-container .header-left {
+        float: left;
+    }
+
+    .header-right-container .header-right {
+        float: right;
+    }
+
+.header-options {
+    margin: 0px;
+    padding: 10px 15px 10px 0px;
+    display: flex;
+}
+.header-options > li {
+    margin: 0px;
+    padding: 0px 0px 0px 30px;
+    list-style: none;
+}
+    .header-options > li:first-child {
+        padding-left: 0px;
+    }
+    .header-options > li > button {
+        background-color: transparent;
+        border: none;
+        color: rgba(266,266,266,1);
+        margin: 0px;
+        padding: 0px;
+        font-size: 20px;
+        transition: ease 0.2s;
+    }
+        .header-options > li > button:hover {
+            color: #60e78f;
+        }
+        .header-options > li > button.refresh-btn.active i {
+            color: #60e78f;
+            animation: fa-spin infinite 2s;
+        }
+        .header-options > li > button.menu-btn.active i {
+            color: #60e78f;
+        }
+/*Header*/
+
+/*Body*/
+.section-container {
+    margin: 0px;
+    padding: 0px;
+    height: calc(100% - 50px);
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    background-image: url(../images/bg-img.png);
+}
+    .section-container:before {
+        content: "";
+        background-color: rgb(13 23 26 / 80%);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0px;
+        top: 0px;
+    }
+    .section-container .aside-container {
+        width: 280px;
+        height: 100%;
+        position: relative;
+        background-color: #162730;
+        box-shadow: 0px 0px 30px 0px #000000;
+    }
+    .section-container .body-container {
+        width: calc(100% - 280px);
+        height: 100%;
+        position: relative;
+        /*background-color: #060d10;*/
+        margin: 0px;
+        padding: 15px;
+    }
+    .section-container .body-container .body-inner-container {
+        width: 100%;
+        height: 100%;
+    }
+
+.schedule-status-container {
+    margin: 0px;
+    padding: 0px 0px 15px 0px;
+    width: 100%;
+}
+
+    .schedule-status-container .schedule-status {
+           margin: 0px;
+    padding: 0px 0px 0px 0px;
+    height: 100%;
+    width: calc(100%);
+    border: 1px solid rgb(86 140 167 / 20%);
+    }
+
+        .schedule-status-container .schedule-status > li {
+            margin: 0px;
+    padding: 0px;
+    list-style: none;
+        }
+
+            .schedule-status-container .schedule-status > li:last-child {
+                
+            }
+
+            .schedule-status-container .schedule-status > li > div {
+                border-left: 10px solid rgb(86 140 167 / 20%);
+    display: flex;
+    margin: 0px;
+    padding: 0px 15px 10px;
+    background-color: rgb(18 28 33 / 50%);
+    border-radius: 3px;
+            }
+.schedule-status-container .schedule-status > li:first-child > div {
+    padding-top: 10px;
+}
+            .schedule-status-container .schedule-status > li.success > div {
+                border-left: 10px solid #56e188;
+            }
+
+            .schedule-status-container .schedule-status > li.failure > div {
+                border-left: 10px solid #db3545;
+            }
+            
+            .schedule-status-container .schedule-status > li > div > p {
+                font-size: 13px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: rgb(255 255 255 / 95%);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    margin: 0 0 0px 0;
+    padding: 0px 5px 0px 0px;
+    line-height: 15px;
+            }
+
+            .schedule-status-container .schedule-status > li > div > span {
+                font-size: 13px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: rgb(255 255 255 / 100%);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin: 0 0 0px 0;
+    padding: 0 0 0px 0;
+    display: block;
+    line-height: 15px;
+            }
+                .schedule-status-container .schedule-status > li > div > span.success {
+                    color: #56e188;
+                }
+                .schedule-status-container .schedule-status > li > div > span.failure {
+                    color: #db3545;
+                }
+
+.schedule-list-container {
+    margin: 0px;
+    padding: 0px;
+    height: calc(100% - 152px);
+    width: 100%;
+    overflow: auto;
+}
+
+    .schedule-list-container .schedule-list {
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+        width: 100%;
+    }
+
+        .schedule-list-container .schedule-list > li {
+            margin: 0px;
+            padding: 0px 0px 5px 0px;
+            list-style: none;
+        }
+        .schedule-list-container .schedule-list > li:last-child {
+            padding-bottom: 0px;
+        }
+            .schedule-list-container .schedule-list > li > div.schedule-list-content {
+                margin: 0px;
+                padding: 00px;
+                background-color: rgb(18 28 33 / 50%);
+                border: 1px solid rgb(86 140 167 / 20%);
+                border-radius: 3px;
+            }
+            
+                .schedule-list-container .schedule-list > li > div.schedule-list-content > .schedule-list-head {
+                        margin: 0px;
+                        padding: 10px 15px;
+                        position: relative;
+                        cursor: pointer;
+                        transition: ease 0.5s;
+                }
+                    .schedule-list-container .schedule-list > li > div.schedule-list-content > .schedule-list-head:hover {
+                        box-shadow: 0px 0px 50px 0px rgb(86 140 167 / 20%) inset;
+                    }
+                    .schedule-list-container .schedule-list > li.active > div.schedule-list-content > .schedule-list-head {
+                        background-color:  rgb(86 140 167 / 20%);
+                    }
+                    .schedule-list-container .schedule-list > li > div.schedule-list-content > .schedule-list-head:before {
+                        content: "\f078";
+                        font-family: "Font Awesome 6 Pro";
+                        font-weight: 300;
+                        position: absolute;
+                        right: 15px;
+                        top: 50%;
+                        color: rgb(255 255 255 / 30%);
+                        transform: translateY(-50%);
+                        transition: ease 0.2s;
+                    }
+            .schedule-list-container .schedule-list > li.active > div.schedule-list-content > .schedule-list-head:before {
+                transform: translateY(-50%) rotate(180deg);
+                color: rgb(255 255 255 / 80%);
+            }
+            .schedule-list-container .schedule-list > li.success > div.schedule-list-content  > .schedule-list-head {
+                border-left: 10px solid #56e188;
+            }
+
+            .schedule-list-container .schedule-list > li.failure > div.schedule-list-content  > .schedule-list-head {
+                border-left: 10px solid #db3545;
+            }
+            .schedule-list-container .schedule-list > li.na > div.schedule-list-content  > .schedule-list-head {
+                border-left: 10px solid #FF9800;
+            }
+            .schedule-list-container .schedule-list > li > div.schedule-list-content > .schedule-list-head > p {
+                font-size: 13px;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                color: rgb(255 255 255 / 95%);
+                font-weight: 400;
+                letter-spacing: 0.5px;
+                margin: 0 0 0px 0;
+                padding: 0 0 0px 0;
+                display: block;
+                width: 100%;
+            }
+
+            .schedule-list-container .schedule-list > li > div.schedule-list-content > .schedule-list-head > span {
+                margin: 0px;
+                padding: 0px 0px 0px 0px;
+                font-size: 11px;
+                color: rgb(255 255 255 / 50%);
+                line-height: 15px;
+                font-weight: 300;
+            }
+            .schedule-list-container .schedule-list > li > div.schedule-list-content > .schedule-list-body {
+                margin: 0px;
+                padding: 0;
+                height: 0px;
+                overflow-y: auto;
+                transition: ease 0.5s;
+            }
+            .schedule-list-container .schedule-list > li.active > div.schedule-list-content > .schedule-list-body {
+                height: 150px;
+            }
+                .schedule-list-container .schedule-list > li > div.schedule-list-content > .schedule-list-body > .schedule-list-logs {
+                    margin: 0px;
+                    padding: 10px 15px;
+                    border-top: 1px solid rgb(86 140 167 / 20%);
+                }
+                    .schedule-list-container .schedule-list > li > div.schedule-list-content > .schedule-list-body > .schedule-list-logs > li {
+                        margin: 0px;
+                        padding: 5px 0px 5px 15px;
+                        list-style: none;
+                        position: relative;
+                        border-bottom: 1px dotted rgb(255 255 255 / 10%);
+                    }
+                        .schedule-list-container .schedule-list > li > div.schedule-list-content > .schedule-list-body > .schedule-list-logs > li:before {
+                            content: "\f0da";
+                            font-family: "Font Awesome 6 Pro";
+                            font-weight: 900;
+                            font-size: 11px;
+                            position: absolute;
+                            left: 0;
+                            top: 13px;
+                            color: rgb(255 255 255 / 30%);
+                            transform: translateY(-50%);
+                            transition: ease 0.2s;
+                        }
+                    .schedule-list-container .schedule-list > li > div.schedule-list-content > .schedule-list-body > .schedule-list-logs > li:last-child {
+                        padding-bottom: 0px;
+                        border-bottom: none;
+
+                    }
+                        .schedule-list-container .schedule-list > li > div.schedule-list-content > .schedule-list-body > .schedule-list-logs > li > .log-txt {
+                            margin: 0px;
+                            padding: 0px;
+                            font-size: 13px;
+                            color: rgb(255 255 255 / 50%);
+                            font-weight: 300;
+                            letter-spacing: 0.5px;
+                        }
+                        /*Nav*/
+                        .nav-container {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    overflow: auto;
+}
+    .nav-container::-webkit-scrollbar {
+        display: none;
+    }
+    .nav-container .nav-list {
+        margin: 0px;
+        padding: 0px;
+    }
+
+
+        .nav-container .nav-list > li {
+            margin: 0px 0px 1px 0px;
+            padding: 0px;
+            list-style: none;
+        }
+        .nav-container .nav-list > li:last-child {
+            margin-bottom: 0px;
+        }
+            .nav-container .nav-list > li .nav-list-option {
+                margin: 0px;
+                padding: 10px;
+                position: relative;
+                display: table;
+                width: 100%;
+                border-bottom: 1px solid #1e303a;
+                cursor: pointer;
+                transition: ease 0.2s;
+            }
+            .nav-container .nav-list > li .nav-list-option:hover,
+            .nav-container .nav-list > li .nav-list-option.active {
+             	background-color: rgba(18,28,33,1);
+            }
+
+            .nav-container .nav-list > li > .nav-list-option > .schedule-name {
+                font-size: 13px;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                color: rgb(255 255 255 / 80%);
+                font-weight: 400;
+                letter-spacing: 0.5px;
+                margin: 0 0 0px 0;
+                padding: 0 0 0px 0;
+                display: block;
+                width: 100%;
+            }
+
+            .nav-container .nav-list > li.success > .nav-list-option > .schedule-name {
+                color: #56e188;
+            }
+
+            .nav-container .nav-list > li.failure > .nav-list-option > .schedule-name {
+                color: #db3545;
+            }
+
+            .nav-container .nav-list > li > .nav-list-option > .schedule-action {
+                margin: 0px;
+                padding: 0px 0px 0px 0px;
+                font-size: 11px;
+                text-align: right;
+                color: rgb(255 255 255 / 50%);
+                float: left;
+                line-height: 15px;
+                font-weight: 300;
+            }
+            .nav-container .nav-list > li > .nav-list-option > .schedule-progressbar {                
+                margin: 0px;
+                padding: 0px;
+                float: right;
+            }
+
+                .nav-container .nav-list > li > .nav-list-option > .schedule-progressbar > li {
+                    list-style: none;
+                    margin: 0px;
+                    padding: 0px 3px 0px 0px;
+                    height: 15px;
+                    display: block;
+                    float: right;
+                }
+                .nav-container .nav-list > li > .nav-list-option > .schedule-progressbar > li:first-child {
+                    padding-right: 0px;
+                }
+                    .nav-container .nav-list > li > .nav-list-option > .schedule-progressbar > li > span {
+                        margin: 0px;
+                        padding: 0px;
+                        height: 100%;
+                        width: 5px;
+                        background-color: rgb(255 255 255 / 20%);
+                        font-size: 0px;
+                        display: block;
+                        border-radius: 3px;
+                        transition: ease 0.2s;
+                    }
+                    .nav-container .nav-list > li > .nav-list-option > .schedule-progressbar > li.success > span {
+                        background-color: #56e188;
+                    }
+                    .nav-container .nav-list > li > .nav-list-option > .schedule-progressbar > li.failure > span {
+                        border-left: 5px solid #db3545;
+                    }
+                    .nav-container .nav-list > li > .nav-list-option > .schedule-progressbar > li.na > span {
+                        border-left: 5px solid #FF9800;
+                    }
+                        .nav-container .nav-list > li > .nav-list-option > .schedule-progressbar > li.success > span:hover,
+                         .nav-container .nav-list > li > .nav-list-option > .schedule-progressbar > li.na > span:hover,
+                        .nav-container .nav-list > li > .nav-list-option > .schedule-progressbar > li.failure > span:hover {
+                            transform: scale(1.3)
+                        }
+/*Nav*/
+
+/*Body*/
+
+/* popup */
+.popup-container {
+	position: fixed;
+    width: 100%;
+    height: 100%;
+	background-color: rgb(2 9 24 / 80%);
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(3px);
+}
+
+.popup-container .popup-body-container {
+	width: calc(100% - 100px);
+   	/* min-height: 420px;
+   	max-height: calc(100% - 100px); */
+   	height: calc(100% - 100px);
+    background-color: #fff;
+    position: absolute;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    transition: ease 0.5s;
+    -webkit-transition: ease 0.5s;
+}
+.popup-container .popup-body-container.popup-active {
+	transform: scale(1);
+    -webkit-transform: scale(1);
+}
+
+.popup-body-container .close-popup-btn {
+	position: absolute;
+    right: -35px;
+    top: -35px;
+    background-color: transparent;
+    border: 2px solid rgba(266,266,266,0.2);
+    color: rgba(266,266,266,0.3);
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    transition: ease 0.2s;
+}
+
+.popup-body-container .close-popup-btn:hover {
+	border: 2px solid rgba(266,266,266,1);
+    color: rgba(266,266,266,1);
+}
+.popup-body-container .popup-body {
+	height: 100%;
+	width: 100%;
+	padding: 10px;
+	    min-height: inherit;
+}
+.popup-body-container .popup-body .popup-head-content {  
+	margin: 0px 0px 10px 0px;
+    padding: 10px 10px 10px 10px;
+    border-bottom: 1px solid #e2e2e2;
+    height: auto;
+}
+.popup-body-container .popup-body .popup-head-content>.h3-head {
+    margin: 0px;
+    font-size: 15px;
+    font-weight: 800;
+    color: #13182a;
+    letter-spacing: 0.5px;
+    text-transform: unset;
+}
+.popup-body-container .popup-body .popup-body-content { 
+	margin: 0px;
+	padding: 0px;
+}
+
+.popup-body-container .popup-body .popup-footer-content { 
+	margin: 0px;
+	padding: 0px;
+	display: flex;
+    justify-content: right; 	
+}
+.popbtn-container {
+	margin: 0px;
+	padding: 0px;
+	display: flex;
+}
+.popbtn-container li {
+	list-style: none;
+	margin: 0px;
+	padding: 0px 0px 0px 15px;
+}
+/* popup */
+
+/*form Design*/
+.form-body-container {
+    padding: 10px 0px 0px;
+    display: table;
+    width: 100%;
+}
+    .form-body-container .form-container.single-row-feald > li {
+        padding-bottom: 0px;
+    }
+
+.form-body-container1 {
+    padding: 5px 0px 5px 0px;
+    display: table;
+    width: 100%;
+    background-color: #e2e7ea;
+    border: 1px solid #c0cbd2;
+}
+
+    .form-body-container1 .form-container.single-row-feald > li {
+        padding-bottom: 0px;
+    }
+.form-body-flex {
+    display: flex;
+}
+.form-container {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    display: table;
+    width: calc(100%);
+}
+
+    .form-container > li {
+        margin: 0px;
+        padding-bottom: 15px;
+        padding-left: 7.5px;
+        padding-right: 7.5px;
+    }
+
+        .form-container > li > .input-group {
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+        }
+
+            .form-container > li > .input-group > .label-field {
+                margin: 0px;
+                padding: 0px 0px 5px;
+            }
+
+                .form-container > li > .input-group > .label-field > label {
+                    margin: 0px;
+                    padding: 0px;
+                    font-size: 13px;
+                    color: #343d48;
+                    font-weight: 400;
+                    letter-spacing: 0.5px;
+                    font-weight: 400;
+                }
+
+            .form-container > li > .input-group > .input-field {
+                position: relative;
+                margin: 0px;
+                padding: 0px;
+            }
+
+                .form-container > li > .input-group > .input-field > .input-field-icon {
+                }
+
+                .form-container > li > .input-group > .input-field > .input-field-icon {
+                    position: absolute;
+                    right: 10px;
+                    top: 8px;
+                    font-size: 14px;
+                    color: #e2e2e2;
+                    transition: ease 0.5s;
+                    -webkit-transition: ease 0.5s;
+                }
+
+                .form-container > li > .input-group > .input-field.input-icon .input-text,
+                .form-container > li > .input-group > .input-field.input-icon .input-password {
+                    padding-right: 32px;
+                }
+
+            .form-container > li > .input-group.flex {
+                display: flex;
+            }
+
+                .form-container > li > .input-group.flex > .label-field {
+                    padding-top: 5px;
+                    padding-right: 10px;
+                }
+                .form-container > li > .input-group.flex > .label-field > label {
+                    white-space: nowrap;
+                }
+    .form-container.single-row-feald {
+        display: flex;
+    }
+    .form-container.single-row-feald > li {
+        display: flex;
+    }
+    .form-container.single-row-feald > li > .input-group {
+        display: flex;
+    }
+
+        .form-container.single-row-feald > li > .input-group > .label-field {
+            /*width: 100px;*/
+            padding-right: 10px;
+            padding-top: 6px;
+        }
+        .form-container.single-row-feald > li > .input-group > .label-field > label {
+            white-space: nowrap;
+        }
+        .form-container.single-row-feald > li > .input-group > .input-field {
+            width: 100%;
+            position: relative;
+        }
+
+            .form-container.single-row-feald > li > .input-group > .input-field.two-field {
+                display: flex;
+            }
+
+                .form-container.single-row-feald > li > .input-group > .input-field.two-field .input-text:first-child {
+                    width: 30%;
+                }
+            .form-container.single-row-feald > li > .input-group > .input-field > .field-icon {
+                position: absolute;
+                right: 5px;
+                top: 8px;
+                font-size: 14px;
+                color: #000000;
+                background-color: transparent;
+                border: none;
+                width: auto;
+                padding: 0px;
+            }
+    
+.btn-container {
+    margin: 0px;
+    padding: 5px 5px;
+    display: table;
+    width: 100%;
+}
+
+    .btn-container > li {
+        margin: 0px;
+        padding: 0px 0px 0px 10px;
+        list-style: none;
+    }
+
+.btn-container1 {
+    margin: 0px;
+    padding: 15px 5px 0px 5px;
+    display: table;
+    width: 100%;
+    border-top: 1px solid #e2e2e2;
+}
+
+    .btn-container1 > li {
+        margin: 0px;
+        padding: 0px 0px 0px 10px;
+        list-style: none;
+    }
+
+.btn-container2 {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+}
+
+    .btn-container2 > li {
+        margin: 0px;
+        padding: 0px 0px 0px 10px;
+        list-style: none;
+    }
+/*form Design*/
+.msg-text  {
+    text-align: center;
+    font-size: 15px;
+    color: #484848;
+    margin: 0px;
+    padding: 15px 0px;
+    letter-spacing: 0.5px;
+    font-weight: 300;
+}
+/*input style*/
+.input-text {
+    margin: 0px;
+    padding: 5px 5px 5px 5px;
+    padding-right: 5px;
+    width: 100%;
+    border: 1px solid #e2e2e2;
+    height: 32px;
+    transition: ease 0.2s;
+    -webkit-transition: ease 0.2s;
+    color: #484848;
+    font-size: 13px;
+    border-radius: 3px;
+}
+
+.input-password {
+    margin: 0px;
+    padding: 5px 5px 5px 5px;
+    padding-right: 5px;
+    width: 100%;
+    border: 1px solid #e2e2e2;
+    height: 32px;
+    transition: ease 0.2s;
+    -webkit-transition: ease 0.2s;
+    color: #484848;
+    font-size: 13px;
+    border-radius: 3px;
+}
+
+.input-select {
+    margin: 0px;
+    padding: 5px 5px 5px 5px;
+    padding-right: 5px;
+    width: 100%;
+    border: 1px solid #e2e2e2;
+    height: 32px;
+    transition: ease 0.2s;
+    -webkit-transition: ease 0.2s;
+    color: #484848;
+    font-size: 13px;
+    border-radius: 3px;
+}
+.input-date {
+    margin: 0px;
+    padding: 5px 20px 5px 5px;
+    padding-right: 5px;
+    width: 100%;
+    border: 1px solid #e2e2e2;
+    height: 32px;
+    transition: ease 0.2s;
+    -webkit-transition: ease 0.2s;
+    color: #484848;
+    font-size: 13px;
+    border-radius: 3px;
+}
+
+.input-textarea {
+    margin: 0px;
+    padding: 5px 5px 5px 5px;
+    padding-right: 5px;
+    width: 100%;
+    border: 1px solid #e2e2e2;
+    height: 32px;
+    transition: ease 0.2s;
+    -webkit-transition: ease 0.2s;
+    color: #484848;
+    font-size: 13px;
+    height: 200px;
+    border-radius: 3px;
+}
+
+    .input-text:hover, .input-text:focus,
+    .input-textarea:hover, .input-textarea:focus,
+    .input-password:hover, .input-password:focus,
+    .input-select:hover, .input-select:focus,
+    .input-date:hover, .input-date:focus {
+        border-color: #0078a6;
+    }
+
+        .input-text:hover + .input-field-icon,
+        .input-text:focus + .input-field-icon,
+        .input-password:hover + .input-field-icon,
+        .input-password:focus + .input-field-icon {
+            color: #0078a6 !important;
+        }
+
+.input-text:read-only:hover, .input-text:read-only:focus {
+    border-color: #e2e2e2;
+}
+
+.input-btn {
+    border: none;
+    padding: 3px 10px;
+    border-radius: 3px;
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 300;
+    transition: ease 0.5s;
+    -webkit-transition: ease 0.5s;
+    margin: 0px auto;
+    min-width: 54px;
+}
+
+.input-btn1 {
+    border: none;
+    padding: 3px 10px;
+    border-radius: 3px;
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 300;
+    transition: ease 0.5s;
+    -webkit-transition: ease 0.5s;
+    margin: 0px auto;
+    height: 32px;
+}
+.input-radio {
+    display: none;
+}
+/*Checkbox Design*/
+.checkbox-container {
+    margin: 0px;
+    padding: 0px;
+    height: 20px;
+}
+    .checkbox-container label {
+        margin: 0px;
+        padding: 2px 0px;
+        position: relative;
+        font-size: 0px;
+        border: 1px solid #cccccc;
+        width: 20px;
+        height: 20px;
+        background-color: #FFFFFF;
+        text-align: center;
+        color: transparent;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+        .checkbox-container label:before {
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: relative;
+            content: "\f00c";
+            margin: 0px;
+            padding: 0px;
+            font-size: 10px;
+        }
+
+    .checkbox-container .input-checkbox:checked + label {
+        background-color: #11232a;
+        border: 1px solid #11232a;
+        color: #FFFFFF;
+    }
+
+/*Checkbox Design*/
+
+/*Radio Design*/
+.radio-container {
+    margin: 0px;
+    padding: 6px 15px;
+    display: flex;
+}
+    .radio-container > li {
+        margin: 0px;
+        padding: 0px 15px 0px 0px;
+        list-style: none;
+    }
+    .radio-container > li:last-child {
+        padding-right: 0px;
+    }
+        .radio-container > li > .checkbox-option {
+            position: relative;
+            margin: 0px;
+            padding: 0;
+        }
+            .radio-container > li > .checkbox-option > label {
+                margin: 0px;
+                padding: 0px 0px 0px 25px;
+                font-size: 13px;
+                color: #1e2b46;
+                position: relative;
+                cursor: pointer;
+                transition: ease 0.2s;
+                -webkit-transition: ease 0.2s;
+                font-weight: 400;
+                white-space: nowrap;
+            }
+                .radio-container > li > .checkbox-option > label:before {
+                    content: "";
+                    position: absolute;
+                    width: 18px;
+                    height: 18px;
+                    border: 1px solid #1e2b46;
+                    left: 0px;
+                    border-radius: 100px;
+                    transition: ease 0.2s;
+                    -webkit-transition: ease 0.2s;
+                }
+            .radio-container > li > .checkbox-option .input-radio:checked + label:before {
+                background-color: #0033a1;
+                border: 3px solid #FFFFFF;
+                box-shadow: 0px 0px 3px 1px #1e2b46;
+            }
+/*Radio Design*/
+/*button color*/
+.blue-btn {
+    background-color: #2A5E9C;
+}
+
+    .blue-btn:hover {
+        background-color: #123967;
+    }
+
+.green-btn {
+    background-color: #00925b;
+}
+
+    .green-btn:hover {
+        background-color: #00723b;
+    }
+
+
+.brown-btn {
+    background-color: #9f7a32;
+}
+
+    .brown-btn:hover {
+        background-color: #986603;
+    }
+.red-btn {
+    background-color: #e14343;
+}
+
+    .red-btn:hover {
+        background-color: #d13333;
+    }
+/*button color*/
+
+.show-password {
+	cursor: pointer;
+}
+.show-password:hover,
+.input-icon.active .show-password {
+	color: #0078a6 !important;
+}
+
+/*custom scroll bar*/
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+    
+}
+
+    :hover::-webkit-scrollbar,
+    ::-webkit-scrollbar:hover {
+        
+    }
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #56e188;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #56e188;
+    }
+/*custom scroll bar*/

@@ -1,0 +1,32 @@
+# Compiled class files
+target/
+
+# Maven specific files
+mvnw
+.mvn/
+
+# STS specific files
+.apt_generated/
+.classpath
+.project
+.settings/
+.springBeans
+
+# Eclipse specific files
+.classpath
+.project
+.settings/
+.metadata/
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+/.settings/
+/*.iml
+/.idea/
+/.factorypath
+/.apt_generated/
+/out/

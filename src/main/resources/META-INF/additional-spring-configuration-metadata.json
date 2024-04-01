@@ -1,0 +1,77 @@
+{"properties": [
+  {
+    "name": "MaxPoolSize",
+    "type": "java.lang.String",
+    "description": "A description for 'MaxPoolSize'"
+  },
+  {
+    "name": "MaxPoolSize",
+    "type": "java.lang.String",
+    "description": "A description for 'MaxPoolSize'"
+  },
+  {
+    "name": "DBConnectionTimeOut",
+    "type": "java.lang.String",
+    "description": "A description for 'DBConnectionTimeOut'"
+  },
+  {
+    "name": "DBConnectionTimeOut",
+    "type": "java.lang.String",
+    "description": "A description for 'DBConnectionTimeOut'"
+  },
+  {
+    "name": "MinIdle",
+    "type": "java.lang.String",
+    "description": "A description for 'MinIdle'"
+  },
+  {
+    "name": "MinIdle",
+    "type": "java.lang.String",
+    "description": "A description for 'MinIdle'"
+  },
+  {
+    "name": "MaxPoolSize",
+    "type": "java.lang.String",
+    "description": "A description for 'MaxPoolSize'"
+  },
+  {
+    "name": "MaxPoolSize",
+    "type": "java.lang.String",
+    "description": "A description for 'MaxPoolSize'"
+  },
+  {
+    "name": "MaxPoolSize",
+    "type": "java.lang.String",
+    "description": "A description for 'MaxPoolSize'"
+  },
+  {
+    "name": "MaxPoolSize",
+    "type": "java.lang.String",
+    "description": "A description for 'MaxPoolSize'"
+  },
+  {
+    "name": "MaxPoolSize",
+    "type": "java.lang.String",
+    "description": "A description for 'MaxPoolSize'"
+  },
+  {
+    "name": "MinIdle",
+    "type": "java.lang.String",
+    "description": "A description for 'MinIdle'"
+  },
+  {
+    "name": "MinIdle",
+    "type": "java.lang.String",
+    "description": "A description for 'MinIdle'"
+  },
+  {
+    "name": "MinIdle",
+    "type": "java.lang.String",
+    "description": "A description for 'MinIdle'"
+  },
+  {
+    "name": "spring.datasource.max-active",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.max-active'"
+  }
+]}

@@ -1,0 +1,353 @@
+[
+    {
+        "jobName": "Sync Astellas GRXML",
+        "jobDescription": "Generate GRXML from excel file and sync with Sestek SR engine",
+        "cronExpression": "0 * * ? * *",
+        "cronDescription": "Runs at every minute",
+        "isActive": true,
+        "action": "SyncGrammar",
+        "actionParameters": {
+            "sourceDirectory": "D:/JsonFiles/ExcelSheet/",
+            "inputFileName": "UserDetails_*.xlsx",
+            "destinationDirectory": "D:/Grxml/",
+            "outputFileName": "UserDetails_*.grxml",
+            "grxmlTemplateName": "grxml_template.xml",
+            "sheetName": "LDAPDetails",
+            "ignoreTitle": "yes"
+        }
+    },
+    {
+        "jobName": "Sync FCG CallHistory",
+        "jobDescription": "Update failed FCG call history records to API",
+        "cronExpression": "0 * * ? * *",
+        "cronDescription": "Runs at every minute",
+        "isActive": true,
+        "action": "SyncAPIFromFile",
+        "actionParameters": {
+            "sourceDirectory": "D:/FCG_IVR/Production/FlatFile/",
+            "sourceFileName": "CallHistory",
+            "api": {
+                "url": "http://192.168.168.219:8888/FCG/callLog/addCallHistory",
+                "method": "POST",
+                "timeout": 10,
+                "headers": {
+                    "apirequestid": "{{uuid}}",
+                    "Content-Type": "application/json"
+                },
+                "security": {
+                    "isEnabled": false,
+                    "credentials": {
+                        "type": "basicAuth",
+                        "userName": null,
+                        "password": null
+                    }
+                },
+                "ssl": {
+                    "keyStorePath": null,
+                    "password": null
+                }
+            }
+        }
+    },{
+        "jobName": "Sync FCG MenuHistory",
+        "jobDescription": "Update failed FCG menu history records to API",
+        "cronExpression": "0 * * ? * *",
+        "cronDescription": "Runs at every minute",
+        "isActive": true,
+        "action": "SyncAPIFromFile",
+        "actionParameters": {
+            "sourceDirectory": "D:/FCG_IVR/Production/FlatFile/",
+            "sourceFileName": "MenuHistory",
+            "api": {
+                "url": "http://192.168.168.219:8888/FCG/callLog/addMenuHistroy",
+                "method": "POST",
+                "timeout": 10,
+                "headers": {
+                    "apirequestid": "{{uuid}}",
+                    "Content-Type": "application/json"
+                },
+                "security": {
+                    "isEnabled": false,
+                    "credentials": {
+                        "type": "basicAuth",
+                        "userName": null,
+                        "password": null
+                    }
+                },
+                "ssl": {
+                    "keyStorePath": null,
+                    "password": null
+                }
+            }
+        }
+    },
+    {
+        "jobName": "Sync StarnikUpdate",
+        "jobDescription": "Update failed StarnikUpdate records to API",
+        "cronExpression": "0 * * ? * *",
+        "cronDescription": "Runs at every minute",
+        "isActive": true,
+        "action": "SyncAPIFromFile",
+        "actionParameters": {
+            "sourceDirectory": "D:/FCG_IVR/Production/FlatFile/",
+            "sourceFileName": "StarnikUpdate",
+            "api": {
+                "url": "http://192.168.168.219:8888/FCG/external/updateNotes",
+                "method": "PUT",
+                "timeout": 10,
+                "headers": {
+                    "apirequestid": "{{uuid}}",
+                    "Content-Type": "application/json"
+                },
+                "security": {
+                    "isEnabled": false,
+                    "credentials": {
+                        "type": "basicAuth",
+                        "userName": null,
+                        "password": null
+                    }
+                },
+                "ssl": {
+                    "keyStorePath": null,
+                    "password": null
+                }
+            }
+        }
+    },
+    {
+		"jobName": "Sync FCG Transaction history",
+		"jobDescription": "Update failed FCG Transaction history records to DB",
+		"cronExpression": "0 */1 * ? * *",
+		"cronDescription": "Runs at every minute",
+		"isActive": true,
+		"action": "SyncTable",
+		"actionParameters": {
+			"sourceDirectory": "D:/FCG_IVR/Production/FlatFile/",
+            "sourceFileName": "TransactionHistory",
+			"connectionString": "jdbc:sqlserver://192.168.168.12;databaseName=FCG_PROD;encrypt=true;trustServerCertificate=true;",
+            "credentials": {
+                "userName": "sa",
+                "password": "5lMlyQvP71M4B7nJ8Rq6zdSkkjFU5TUuD7uhu8+hKnonPbUN7xTSStPEaBtWL1YSMI1OmGDXX58="
+            },
+            "tableName":"IVR_TRANSACTION_HISTORY"
+		}
+	},{
+		"jobName": "Sync Astellas call history",
+		"jobDescription": "Update failed Astellas CallHistory records to DB",
+		"cronExpression": "0 */1 * ? * *",
+		"cronDescription": "Runs at every minute",
+		"isActive": true,
+		"action": "SyncTable",
+		"actionParameters": {
+			"sourceDirectory": "D:/Astellas/Production/FlatFile/",
+            "sourceFileName": "CallHistory",
+			"connectionString": "jdbc:sqlserver://192.168.168.12;databaseName=ASTELLAS_PROD;encrypt=true;trustServerCertificate=true;",
+            "credentials": {
+                "userName": "sa",
+                "password": "5lMlyQvP71M4B7nJ8Rq6zdSkkjFU5TUuD7uhu8+hKnonPbUN7xTSStPEaBtWL1YSMI1OmGDXX58="
+            },
+            "tableName":"ASTELLAS_IVR_CALL_HISTORY"
+		}
+	},
+	{
+		"jobName": "Sync Astellas Transaction history",
+		"jobDescription": "Update failed Astellas TransactionHistory records to DB",
+		"cronExpression": "0 */1 * ? * *",
+		"cronDescription": "Runs at every minute",
+		"isActive": true,
+		"action": "SyncTable",
+		"actionParameters": {
+			"sourceDirectory": "D:/Astellas/Production/FlatFile/",
+            "sourceFileName": "TransactionHistory",
+			"connectionString": "jdbc:sqlserver://192.168.168.12;databaseName=ASTELLAS_PROD;encrypt=true;trustServerCertificate=true;",
+            "credentials": {
+                "userName": "sa",
+                "password": "5lMlyQvP71M4B7nJ8Rq6zdSkkjFU5TUuD7uhu8+hKnonPbUN7xTSStPEaBtWL1YSMI1OmGDXX58="
+            },
+            "tableName":"ASTELLAS_IVR_TRANSACTION_HISTORY"
+		}
+	},
+	{
+		"jobName": "Sync Nike Call history",
+		"jobDescription": "Update failed Nike Call history records to DB",
+		"cronExpression": "0 */1 * ? * *",
+		"cronDescription": "Runs at every minute",
+		"isActive": true,
+		"action": "SyncTable",
+		"actionParameters": {
+			"sourceDirectory": "D:/NikeESD_IVR_V02/Production/FlatFile/",
+            "sourceFileName": "CallHistory",
+			"connectionString": "jdbc:sqlserver://192.168.168.12;databaseName=NIKE_ESD_PROD;encrypt=true;trustServerCertificate=true;",
+            "credentials": {
+                "userName": "sa",
+                "password": "5lMlyQvP71M4B7nJ8Rq6zdSkkjFU5TUuD7uhu8+hKnonPbUN7xTSStPEaBtWL1YSMI1OmGDXX58="
+            },
+            "tableName":"IVR_CALL_HISTORY"
+		}
+	},
+	{
+		"jobName": "Sync Nike Transaction history",
+		"jobDescription": "Update failed Nike Transaction history records to DB",
+		"cronExpression": "0 */1 * ? * *",
+		"cronDescription": "Runs at every minute",
+		"isActive": true,
+		"action": "SyncTable",
+		"actionParameters": {
+			"sourceDirectory": "D:/NikeESD_IVR_V02/Production/FlatFile/",
+            "sourceFileName": "TransactionHistory",
+			"connectionString": "jdbc:sqlserver://192.168.168.12;databaseName=NIKE_ESD_PROD;encrypt=true;trustServerCertificate=true;",
+            "credentials": {
+                "userName": "sa",
+                "password": "5lMlyQvP71M4B7nJ8Rq6zdSkkjFU5TUuD7uhu8+hKnonPbUN7xTSStPEaBtWL1YSMI1OmGDXX58="
+            },
+            "tableName":"IVR_TRANSACTION_HISTORY"
+		}
+	},
+	{
+		"jobName": "Sync Nike Menu history",
+		"jobDescription": "Update failed Nike Menu history records to DB",
+		"cronExpression": "0 */1 * ? * *",
+		"cronDescription": "Runs at every minute",
+		"isActive": true,
+		"action": "SyncTable",
+		"actionParameters": {
+			"sourceDirectory": "D:/NikeESD_IVR_V02/Production/FlatFile/",
+            "sourceFileName": "MenuHistory",
+			"connectionString": "jdbc:sqlserver://192.168.168.12;databaseName=NIKE_ESD_PROD;encrypt=true;trustServerCertificate=true;",
+            "credentials": {
+                "userName": "sa",
+                "password": "5lMlyQvP71M4B7nJ8Rq6zdSkkjFU5TUuD7uhu8+hKnonPbUN7xTSStPEaBtWL1YSMI1OmGDXX58="
+            },
+            "tableName":"IVR_MENU_HISTORY"
+		}
+	},
+	{
+		"jobName": "Sync Tjx Call history",
+		"jobDescription": "Update failed Tjx Call history records to DB",
+		"cronExpression": "0 */1 * ? * *",
+		"cronDescription": "Runs at every minute",
+		"isActive": true,
+		"action": "SyncTable",
+		"actionParameters": {
+			"sourceDirectory": "D:/TJX_IVR_V01/Production/FlatFile/",
+            "sourceFileName": "CallHistory",
+			"connectionString": "jdbc:sqlserver://192.168.168.12;databaseName=TJX_IVR_PROD;encrypt=true;trustServerCertificate=true;",
+            "credentials": {
+                "userName": "sa",
+                "password": "5lMlyQvP71M4B7nJ8Rq6zdSkkjFU5TUuD7uhu8+hKnonPbUN7xTSStPEaBtWL1YSMI1OmGDXX58="
+            },
+            "tableName":"IVR_CALL_HISTORY"
+		}
+	},
+	{
+		"jobName": "Sync Tjx Transaction history",
+		"jobDescription": "Update failed Tjx Transaction history records to DB",
+		"cronExpression": "0 */1 * ? * *",
+		"cronDescription": "Runs at every minute",
+		"isActive": true,
+		"action": "SyncTable",
+		"actionParameters": {
+			"sourceDirectory": "D:/TJX_IVR_V01/Production/FlatFile/",
+            "sourceFileName": "TransactionHistory",
+			"connectionString": "jdbc:sqlserver://192.168.168.12;databaseName=TJX_IVR_PROD;encrypt=true;trustServerCertificate=true;",
+            "credentials": {
+                "userName": "sa",
+                "password": "5lMlyQvP71M4B7nJ8Rq6zdSkkjFU5TUuD7uhu8+hKnonPbUN7xTSStPEaBtWL1YSMI1OmGDXX58="
+            },
+            "tableName":"IVR_TRANSACTION_HISTORY"
+		}
+	},
+	{
+		"jobName": "Sync Toyota Call history",
+		"jobDescription": "Update failed Toyota Call History records to DB",
+		"cronExpression": "0 */1 * ? * *",
+		"cronDescription": "Runs at every minute",
+		"isActive": true,
+		"action": "SyncTable",
+		"actionParameters": {
+			"sourceDirectory": "D:/Toyota_V02/Production/FlatFile/",
+            "sourceFileName": "CallHistory",
+			"connectionString": "jdbc:sqlserver://192.168.168.12;databaseName=TOYOTA_SMARTIVR_PROD;encrypt=true;trustServerCertificate=true;",
+            "credentials": {
+                "userName": "sa",
+                "password": "5lMlyQvP71M4B7nJ8Rq6zdSkkjFU5TUuD7uhu8+hKnonPbUN7xTSStPEaBtWL1YSMI1OmGDXX58="
+            },
+            "tableName":"TOYOTA_IVR_CALL_HISTORY"
+		}
+	},
+	{
+		"jobName": "Sync Toyota Transaction history",
+		"jobDescription": "Update failed Toyota Transaction History records to DB",
+		"cronExpression": "0 */1 * ? * *",
+		"cronDescription": "Runs at every minute",
+		"isActive": true,
+		"action": "SyncTable",
+		"actionParameters": {
+			"sourceDirectory": "D:/Toyota_V02/Production/FlatFile/",
+            "sourceFileName": "TransactionHistory",
+			"connectionString": "jdbc:sqlserver://192.168.168.12;databaseName=TOYOTA_SMARTIVR_PROD;encrypt=true;trustServerCertificate=true;",
+            "credentials": {
+                "userName": "sa",
+                "password": "5lMlyQvP71M4B7nJ8Rq6zdSkkjFU5TUuD7uhu8+hKnonPbUN7xTSStPEaBtWL1YSMI1OmGDXX58="
+            },
+            "tableName":"TOYOTA_IVR_TRANSACTION_HISTORY"
+		}
+	},
+	{
+		"jobName": "Sync Woolsworth Call history",
+		"jobDescription": "Update failed Woolsworth Call History records to DB",
+		"cronExpression": "0 */1 * ? * *",
+		"cronDescription": "Runs at every minute",
+		"isActive": true,
+		"action": "SyncTable",
+		"actionParameters": {
+			"sourceDirectory": "D:/WoolWorths/Production/FlatFile/",
+            "sourceFileName": "CallHistory",
+			"connectionString": "jdbc:sqlserver://192.168.168.12;databaseName=SMARTIVR_PROD;encrypt=true;trustServerCertificate=true;",
+            "credentials": {
+                "userName": "sa",
+                "password": "5lMlyQvP71M4B7nJ8Rq6zdSkkjFU5TUuD7uhu8+hKnonPbUN7xTSStPEaBtWL1YSMI1OmGDXX58="
+            },
+            "tableName":"WOOLWORTHS_IVR_CALL_HISTORY"
+		}
+	},
+	{
+		"jobName": "Sync Woolsworth Transaction  history",
+		"jobDescription": "Update failed Woolsworth Transaction History records to DB",
+		"cronExpression": "0 */1 * ? * *",
+		"cronDescription": "Runs at every minute",
+		"isActive": true,
+		"action": "SyncTable",
+		"actionParameters": {
+			"sourceDirectory": "D:/WoolWorths/Production/FlatFile/",
+            "sourceFileName": "TransactionHistory",
+			"connectionString": "jdbc:sqlserver://192.168.168.12;databaseName=SMARTIVR_PROD;encrypt=true;trustServerCertificate=true;",
+            "credentials": {
+                "userName": "sa",
+                "password": "5lMlyQvP71M4B7nJ8Rq6zdSkkjFU5TUuD7uhu8+hKnonPbUN7xTSStPEaBtWL1YSMI1OmGDXX58="
+            },
+            "tableName":"WOOLWORTHS_IVR_TRANSACTION_HISTORY"
+		}
+	},
+	{
+		"jobName": "Sync Astellas Summary Report",
+		"jobDescription": "Sync Astellas summary report by executing stored procedure",
+		"cronExpression": "0 */1 * ? * *",
+		"cronDescription": "Runs at every minute",
+		"isActive": true,
+		"action": "SyncDatabase",
+		"actionParameters": {
+			"connectionString": "jdbc:sqlserver://192.168.168.12;databaseName=ASTELLAS_PROD;encrypt=true;trustServerCertificate=true;",
+            "credentials": {
+                "userName": "sa",
+                "password": "5lMlyQvP71M4B7nJ8Rq6zdSkkjFU5TUuD7uhu8+hKnonPbUN7xTSStPEaBtWL1YSMI1OmGDXX58="
+            },
+			"procedureName":"ASTELLAS_SUMMARY_REPORT_V01",
+			"parameters":{
+				"STARTTIME":"{{date:today#yyyyMMdd}}",
+				"ENDTIME":"{{date:today#yyyyMMdd}}",
+				"VC_DNIS" : "54621"
+			}
+		}
+	}
+]

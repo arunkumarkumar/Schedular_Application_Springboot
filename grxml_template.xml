@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<grammar mode="voice" tag-format="semantics/1.0"
+	xml:lang="en-US" version="1.0" root="main">
+	<lexicon uri="C:/Program Files/test/SR/models/test.pls" />
+	<rule id="main">
+		<item>
+			<ruleref uri="#Predefined" />
+			<tag>out = rules.Predefined;</tag>
+		</item>
+	</rule>
+	<rule id="Predefined">
+		<one-of/>
+	</rule>
+</grammar>
